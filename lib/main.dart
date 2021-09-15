@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Euler academy 2'),
+      home: const MyHomePage(title: 'Agora funcionou'),
     );
   }
 }
