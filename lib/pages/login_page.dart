@@ -35,6 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(
             child: Image.asset("assets/euler_logo.png"),
           ),
+
           SizedBox(
             height: 20,
           ),
@@ -56,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             style: TextStyle(fontSize: 20),
           ),
+
           SizedBox(
             height: 10,
           ),
@@ -80,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             style: TextStyle(fontSize: 20),
           ),
+
           SizedBox(
             height: 30,
           ),
@@ -106,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
+
           SizedBox(
             height: 80,
           ),
@@ -156,6 +160,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
+
+          // SPACING
           SizedBox(
             height: 20,
           ),
