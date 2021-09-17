@@ -13,6 +13,7 @@ class WelcomePage extends StatelessWidget {
         Image.asset('assets/euler_logo.png'),
         Image.asset('assets/telaInicial.png'),
         Container(
+            margin: const EdgeInsets.only(top: 60.0),
             child: Text('Aprenda o que quiser, não importa a hora ou lugar!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -23,7 +24,7 @@ class WelcomePage extends StatelessWidget {
                   decoration: TextDecoration.none,
                 ))),
         Container(
-            margin: const EdgeInsets.only(bottom: 20.0, top: 60.0),
+            margin: const EdgeInsets.only(bottom: 80.0, top: 20.0),
             child: Text('A Euler Academy está disponível em diversos idiomas.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -52,7 +53,8 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, 'login');
+            Navigator.of(context).pushNamedAndRemoveUntil(
+                'login', (Route<dynamic> route) => false);
           },
         ),
       ])
