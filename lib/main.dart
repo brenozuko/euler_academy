@@ -9,5 +9,8 @@ void main() {
     debugShowCheckedModeBanner: false,
     title: 'IMC',
     home: LoginPage(),
+    theme: ThemeData(
+      fontFamily: 'Lato'
+    )
   ));
 }
