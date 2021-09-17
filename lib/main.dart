@@ -10,5 +10,8 @@ void main() {
     debugShowCheckedModeBanner: false,
     title: 'Euler Academy',
     home: WelcomePage(),
+    theme: ThemeData(
+      fontFamily: 'Lato'
+    )
   ));
 }
