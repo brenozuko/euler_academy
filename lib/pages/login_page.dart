@@ -96,7 +96,10 @@ class _LoginPageState extends State<LoginPage> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
-            onPressed: () => print('miau'),
+            onPressed: () {
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  'categories', (Route<dynamic> route) => false);
+            },
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(

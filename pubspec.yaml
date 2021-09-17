@@ -89,7 +89,4 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/euler_logo.png
-    - assets/fb-icon.png
-    - assets/google-icon.png
-    - assets/telainicial.png
+    - assets/
