@@ -18,15 +18,17 @@ class WelcomePage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'Lato',
                   color: Color(0xff274378),
                   decoration: TextDecoration.none,
                 ))),
         Container(
-            margin: const EdgeInsets.only(bottom: 20.0, top: 20.0),
+            margin: const EdgeInsets.only(bottom: 20.0, top: 60.0),
             child: Text('A Euler Academy está disponível em diversos idiomas.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
+                  fontFamily: 'Lato',
                   fontWeight: FontWeight.w100,
                   color: Color(0xff000000),
                   decoration: TextDecoration.none,
@@ -41,11 +43,17 @@ class WelcomePage extends StatelessWidget {
             elevation: 15,
             shadowColor: Colors.black,
           ),
-          child: Text('Comece aqui',
-              style: TextStyle(
-                color: Colors.white,
-              )),
-          onPressed: () {},
+          child: Text(
+            'Comece por aqui',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'Lato',
+              fontSize: 24,
+            ),
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, 'login');
+          },
         ),
       ])
     ]));

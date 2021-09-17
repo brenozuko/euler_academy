@@ -6,12 +6,18 @@ import 'pages/welcome_page.dart';
 
 void main() {
   // ignore: prefer_const_constructors
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Euler Academy',
-    home: WelcomePage(),
-    theme: ThemeData(
-      fontFamily: 'Lato'
-    )
-  ));
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Euler Academy',
+      initialRoute: 'welcome',
+      routes: {
+        'welcome': (context) => const WelcomePage(),
+        'login': (context) => const LoginPage(),
+      },
+      theme: ThemeData(
+        fontFamily: 'Lato',
+      ),
+    ),
+  );
 }
