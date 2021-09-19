@@ -6,7 +6,6 @@ import 'pages/welcome_page.dart';
 import 'pages/categories_page.dart';
 
 void main() {
-  // ignore: prefer_const_constructors
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -15,7 +14,7 @@ void main() {
       routes: {
         'welcome': (context) => const WelcomePage(),
         'login': (context) => const LoginPage(),
-        'categories' : (context) => const CategoriesPage()
+        'categories': (context) => const CategoriesPage()
       },
       theme: ThemeData(
         fontFamily: 'Lato',
