@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
 
           // FACEBOOK SIGN IN
           Container(
-            height: 60,
+            height: 45,
             alignment: Alignment.centerLeft,
             decoration: BoxDecoration(
               color: Color(0xFF3C5A99),
@@ -129,9 +129,9 @@ class _LoginPageState extends State<LoginPage> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 2,
-                  offset: Offset(0, 3), // changes position of shadow
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: Offset(1, 1), // changes position of shadow
                 ),
               ],
             ),
@@ -171,7 +171,7 @@ class _LoginPageState extends State<LoginPage> {
 
           // GOOGLE SIGN IN
           Container(
-            height: 60,
+            height: 45,
             alignment: Alignment.centerLeft,
             decoration: BoxDecoration(
               color: Color(0xFFF5F5F5),
@@ -181,9 +181,9 @@ class _LoginPageState extends State<LoginPage> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 2,
-                  offset: Offset(0, 3), // changes position of shadow
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                  offset: Offset(1, 1), // changes position of shadow
                 ),
               ],
             ),
@@ -243,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
-            onPressed: () => print('miau'),
+            onPressed: () => {Navigator.pushNamed(context, 'register')},
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
