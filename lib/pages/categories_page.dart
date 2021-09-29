@@ -77,7 +77,7 @@ class CategoriesPage extends StatelessWidget {
                             'Matemática',
                             style: TextStyle(
                                 color: Color(0xff274378),
-                                fontSize: 30,
+                                fontSize: 20,
                                 decoration: TextDecoration.none),
                           )
                         ],

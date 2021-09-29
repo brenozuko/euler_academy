@@ -9,6 +9,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  //Declaração dos atributos (variáveis) que serão utilizados
+  //para controlar os valores informados nos campos de texto
+  //Peso e altura
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
+  var formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
           // INPUT EMAIL
           TextFormField(
             // autofocus: true,
+            controller: txtEmail,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: "E-mail",
@@ -65,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
           // INPUT PASSWORD
           TextFormField(
             // autofocus: true,
+            controller: txtSenha,
             keyboardType: TextInputType.text,
             obscureText: true,
             decoration: InputDecoration(
@@ -97,8 +106,29 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                  'categories', (Route<dynamic> route) => false);
+              if (txtEmail.text != "" && txtSenha.text != "") {
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    'categories', (Route<dynamic> route) => false);
+              } else {
+                showDialog<String>(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                    title: const Text('Preencha os campos'),
+                    content: const Text(
+                        'Você precisa preencher os campos de e-mail e senha para logar.'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'Sair'),
+                        child: const Text('Sair'),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'OK'),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
+              }
             },
             child: Padding(
               padding: EdgeInsets.all(10.0),
