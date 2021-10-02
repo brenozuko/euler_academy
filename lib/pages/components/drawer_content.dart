@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_constructors
 
 class DrawerContent extends StatefulWidget {
   const DrawerContent({Key? key}) : super(key: key);
@@ -49,6 +50,23 @@ class _DrawerContentState extends State<DrawerContent> {
                     color: Colors.white,
                   ),
                 ),
+                onTap: () => {
+                  Navigator.pushNamed(context, 'categories'),
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Sobre nós',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    decoration: TextDecoration.none,
+                    fontSize: 22,
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(context, 'about'),
+                },
               ),
             ]),
           )

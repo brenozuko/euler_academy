@@ -5,6 +5,7 @@ import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 import 'pages/welcome_page.dart';
 import 'pages/categories_page.dart';
+import 'pages/about_page.dart';
 
 void main() {
   runApp(
@@ -17,6 +18,7 @@ void main() {
         'login': (context) => const LoginPage(),
         'categories': (context) => const CategoriesPage(),
         'register': (context) => const RegisterPage(),
+        'about': (context) => const AboutPage()
       },
       theme: ThemeData(
         fontFamily: 'Lato',

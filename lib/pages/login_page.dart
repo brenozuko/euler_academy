@@ -107,8 +107,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             onPressed: () {
               if (txtEmail.text != "" && txtSenha.text != "") {
-                Navigator.of(context).pushNamedAndRemoveUntil(
-                    'categories', (Route<dynamic> route) => false);
+                Navigator.of(context).pushNamedAndRemoveUntil('categories', (Route<dynamic> route) => false);
               } else {
                 showDialog<String>(
                   context: context,
