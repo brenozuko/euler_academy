@@ -75,7 +75,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                           ],
                         )),
                     Container(
-                        margin: EdgeInsets.all(10),
+                        margin: EdgeInsets.only(
+                            top: 10.0, bottom: 10.0, left: 10.0),
                         child: Column(
                           children: [
                             SizedBox(
@@ -99,6 +100,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         child: Column(
                           children: [
                             SizedBox(
+                              
                                 child: Image.asset('assets/matematica.png')),
                             Text(
                               'Matemática',
