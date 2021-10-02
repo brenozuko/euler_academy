@@ -38,16 +38,17 @@ class _CategoriesPageState extends State<CategoriesPage> {
         child: Container(
           child: (Column(children: [
             Container(
-                margin: EdgeInsets.only(top: 30),
-                child: Text(
-                  'Matérias',
-                  style: TextStyle(
-                      fontFamily: 'Lato',
-                      decoration: TextDecoration.none,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff274378)),
-                )),
+              margin: EdgeInsets.only(top: 30),
+              child: Text(
+                'Matérias',
+                style: TextStyle(
+                    fontFamily: 'Lato',
+                    decoration: TextDecoration.none,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xff274378)),
+              ),
+            ),
             Container(
               width: double.infinity * 0.9,
               height: 4,
