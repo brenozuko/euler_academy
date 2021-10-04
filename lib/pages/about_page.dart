@@ -53,7 +53,7 @@ class AboutPage extends StatelessWidget {
               color: Color(0xff274378),
             ),
             DevDescription(nomeBreno, descricaoBreno, fotoBreno),
-            DevDescription(nomeJean, descricaoBreno, fotoJean),
+            DevDescription(nomeJean, descricaoJean, fotoJean),
           ],
         ),
       ),
