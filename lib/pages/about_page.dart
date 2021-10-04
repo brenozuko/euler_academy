@@ -10,7 +10,7 @@ class AboutPage extends StatelessWidget {
   final String fotoBreno = 'assets/breno_dev.jpg';
   final String nomeJean = 'Jean Silva';
   final String descricaoJean =
-      'Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.';
+      '19 anos. Desenvolvedor web frontend. Cursa Análise e Desenvolvimento de Sistemas na Fatec-RP. fã de e-sports e jogos eletrônicos.';
   final String fotoJean = 'assets/jean_dev.jpg';
 
   const AboutPage({Key? key}) : super(key: key);
