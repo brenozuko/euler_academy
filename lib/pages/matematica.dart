@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'components/drawer_content.dart';
 
-class CategoriesPage extends StatefulWidget {
-  const CategoriesPage({Key? key}) : super(key: key);
+class Matematica extends StatefulWidget {
+  const Matematica({Key? key}) : super(key: key);
 
   @override
-  State<CategoriesPage> createState() => _CategoriesPageState();
+  State<Matematica> createState() => _MatematicaState();
 }
 
-class _CategoriesPageState extends State<CategoriesPage> {
+class _MatematicaState extends State<Matematica> {
   //Índice da página que será carregada inicialmente
   var telaAtual = 0;
 
@@ -36,24 +36,25 @@ class _CategoriesPageState extends State<CategoriesPage> {
       ),
       body: SingleChildScrollView(
         child: Container(
+          color: Color(0xff274378),
           child: (Column(children: [
             Container(
               margin: EdgeInsets.only(top: 30),
               child: Text(
-                'Matérias',
+                'Aulas Gravadas - Matematica',
                 style: TextStyle(
                     fontFamily: 'Lato',
                     decoration: TextDecoration.none,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff274378)),
+                    color: Color(0xffffffff)),
               ),
             ),
             Container(
               width: double.infinity * 0.9,
               height: 4,
               margin: const EdgeInsets.all(20),
-              color: Color(0xff274378),
+              color: Color(0xffffffff),
             ),
             Column(
               children: [
@@ -64,33 +65,42 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         margin: EdgeInsets.all(10),
                         child: Column(
                           children: [
-                            SizedBox(child: Image.asset('assets/historia.png')),
+                            SizedBox(child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'historia', (Route<dynamic> route) => false);
+                                
                               },
-                              child: const Text('Historia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                  width: 120,
+                                  child: Text('Funções Logarítmicas - 24/05',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xffffffff),
+                                          fontSize: 20,
+                                          decoration: TextDecoration.none))),
                             )
                           ],
                         )),
                     Container(
                         margin: EdgeInsets.only(
-                        top: 10.0, bottom: 10.0, left: 10.0),
+                            top: 10.0, bottom: 10.0, left: 10.0),
                         child: Column(
                           children: [
                             SizedBox(
-                                child: Image.asset('assets/geografia.png')),
+                                child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'geografia', (Route<dynamic> route) => false);
+                                
                               },
-                              child: const Text('Geografia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                width: 120,
+                                child: Text('Funções de Segundo Grau - 23/05',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xffffffff),
+                                        fontSize: 20,
+                                        decoration: TextDecoration.none)),
+                              ),
                             )
                           ],
                         ))
@@ -104,15 +114,19 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         child: Column(
                           children: [
                             SizedBox(
-                                child: Image.asset('assets/matematica.png')),
+                                child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'matematica', (Route<dynamic> route) => false);
+                                
                               },
-                              child: const Text('Matemática', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                  width: 120,
+                                  child: Text('Polinômios - 22/05',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color(0xffffffff),
+                                          fontSize: 20,
+                                          decoration: TextDecoration.none))),
                             )
                           ],
                         )),
@@ -120,15 +134,20 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         margin: EdgeInsets.all(10),
                         child: Column(
                           children: [
-                            SizedBox(child: Image.asset('assets/fisica.png')),
+                            SizedBox(child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'fisica', (Route<dynamic> route) => false);
+
                               },
-                              child: const Text('Física', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                width: 120,
+                                child: Text('Fatoração - 21/05',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xffffffff),
+                                        fontSize: 20,
+                                        decoration: TextDecoration.none)),
+                              ),
                             )
                           ],
                         ))
@@ -141,15 +160,20 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         margin: EdgeInsets.all(10),
                         child: Column(
                           children: [
-                            SizedBox(child: Image.asset('assets/quimica.png')),
+                            SizedBox(child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'quimica', (Route<dynamic> route) => false);
+                                
                               },
-                              child: const Text('Química', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                width: 120,
+                                child: Text('Raízes Quadradas - 20/05',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xffffffff),
+                                        fontSize: 20,
+                                        decoration: TextDecoration.none)),
+                              ),
                             )
                           ],
                         )),
@@ -158,15 +182,20 @@ class _CategoriesPageState extends State<CategoriesPage> {
                         child: Column(
                           children: [
                             SizedBox(
-                                child: Image.asset('assets/filosofia.png')),
+                                child: Image.asset('assets/aula_gravada.png')),
                             TextButton(
                               onPressed: () {
-                                Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'filosofia', (Route<dynamic> route) => false);
+                                
                               },
-                              child: const Text('Filosofia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: SizedBox(
+                                width: 120,
+                                child: Text('Potênciação - 19/05',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Color(0xffffffff),
+                                        fontSize: 20,
+                                        decoration: TextDecoration.none)),
+                              ),
                             )
                           ],
                         ))
