@@ -68,17 +68,20 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'historia', (Route<dynamic> route) => false);
+                                    'historia',
+                                    (Route<dynamic> route) => false);
                               },
-                              child: const Text('Historia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Historia',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         )),
                     Container(
                         margin: EdgeInsets.only(
-                        top: 10.0, bottom: 10.0, left: 10.0),
+                            top: 10.0, bottom: 10.0, left: 10.0),
                         child: Column(
                           children: [
                             SizedBox(
@@ -86,11 +89,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'geografia', (Route<dynamic> route) => false);
+                                    'geografia',
+                                    (Route<dynamic> route) => false);
                               },
-                              child: const Text('Geografia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Geografia',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         ))
@@ -108,11 +114,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'matematica', (Route<dynamic> route) => false);
+                                    'matematica',
+                                    (Route<dynamic> route) => false);
                               },
-                              child: const Text('Matemática', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Matemática',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         )),
@@ -126,9 +135,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
                                     'fisica', (Route<dynamic> route) => false);
                               },
-                              child: const Text('Física', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Física',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         ))
@@ -147,9 +158,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
                                     'quimica', (Route<dynamic> route) => false);
                               },
-                              child: const Text('Química', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Química',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         )),
@@ -162,11 +175,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pushNamedAndRemoveUntil(
-                                    'filosofia', (Route<dynamic> route) => false);
+                                    'filosofia',
+                                    (Route<dynamic> route) => false);
                               },
-                              child: const Text('Filosofia', style: TextStyle(color: Color(0xff274378),
-                                  fontSize: 20,
-                                  decoration: TextDecoration.none)),
+                              child: const Text('Filosofia',
+                                  style: TextStyle(
+                                      color: Color(0xff274378),
+                                      fontSize: 20,
+                                      decoration: TextDecoration.none)),
                             )
                           ],
                         ))
@@ -187,7 +203,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                                   borderRadius: BorderRadius.circular(20.0)),
                               filled: true,
                               hintStyle: TextStyle(color: Color(0xffABA4A4)),
-                              hintText: "Pesquisar por algo específico",
+                              hintText: "Pesquisar por algo específico...",
                               fillColor: Color(0xffffffff)),
                         )),
                   ),

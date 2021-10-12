@@ -12,6 +12,7 @@ import 'pages/about_page.dart';
 import 'pages/fisica.dart';
 import 'pages/quimica.dart';
 import 'pages/filosofia.dart';
+import 'pages/exercises_page.dart';
 
 void main() {
   runApp(
@@ -25,13 +26,13 @@ void main() {
         'categories': (context) => const CategoriesPage(),
         'register': (context) => const RegisterPage(),
         'about': (context) => const AboutPage(),
-        'historia' : (context) => const Historia(),
-        'geografia' : (context) => const Geografia(),
-        'matematica' : (context) => const Matematica(),
-        'fisica' : (context) => const Fisica(),
-        'quimica' : (context) => const Quimica(),
-        'filosofia' : (context) => const Filosofia()
-
+        'historia': (context) => const Historia(),
+        'geografia': (context) => const Geografia(),
+        'matematica': (context) => const Matematica(),
+        'fisica': (context) => const Fisica(),
+        'quimica': (context) => const Quimica(),
+        'filosofia': (context) => const Filosofia(),
+        'exercises': (context) => const ExercisesPage()
       },
       theme: ThemeData(
         fontFamily: 'Lato',

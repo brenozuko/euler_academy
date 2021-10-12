@@ -56,6 +56,20 @@ class _DrawerContentState extends State<DrawerContent> {
               ),
               ListTile(
                 title: Text(
+                  'Exercícios',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    decoration: TextDecoration.none,
+                    fontSize: 22,
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(context, 'exercises'),
+                },
+              ),
+              ListTile(
+                title: Text(
                   'Sobre nós',
                   style: TextStyle(
                     fontFamily: 'Lato',
