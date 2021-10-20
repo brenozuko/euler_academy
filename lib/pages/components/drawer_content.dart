@@ -82,6 +82,21 @@ class _DrawerContentState extends State<DrawerContent> {
                   Navigator.pushNamed(context, 'about'),
                 },
               ),
+              ListTile(
+                title: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    decoration: TextDecoration.none,
+                    fontSize: 22,
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () => {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                      'login', (Route<dynamic> route) => false),
+                },
+              ),
             ]),
           )
         ],
