@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "264429435290",
+    "project_id": "euler-academy",
+    "storage_bucket": "euler-academy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264429435290:android:e801c356692ed0f6d12223",
+        "android_client_info": {
+          "package_name": "com.example.euler_academy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264429435290-0mtgqcc6tc4521sl66sf92cj6pd9i709.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8wAlcexvSfI56whafL_0hNE-gE8hRjJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264429435290-0mtgqcc6tc4521sl66sf92cj6pd9i709.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
