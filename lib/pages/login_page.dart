@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -107,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             onPressed: () {
               if (txtEmail.text != "" && txtSenha.text != "") {
-                Navigator.of(context).pushNamedAndRemoveUntil('categories', (Route<dynamic> route) => false);
+                login(txtEmail.text, txtSenha.text);
               } else {
                 showDialog<String>(
                   context: context,
@@ -290,6 +291,37 @@ class _LoginPageState extends State<LoginPage> {
             height: 20,
           ),
         ]),
+      ),
+    );
+  }
+
+  void login(email, senha) {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+      email: email,
+      password: senha,
+    )
+        .then((value) {
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          'categories', (Route<dynamic> route) => false);
+    }).catchError((erro) {
+      if (erro.code == 'user-not-found') {
+        exibirMensagem('ERRO: Usuário não encontrado');
+      } else if (erro.code == 'wrong-password') {
+        exibirMensagem('ERRO: Senha incorreta');
+      } else if (erro.code == 'invalid-email') {
+        exibirMensagem('ERRO: Email inválido');
+      } else {
+        exibirMensagem('ERRO: ${erro.message}');
+      }
+    });
+  }
+
+  void exibirMensagem(msg) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        duration: Duration(seconds: 2),
       ),
     );
   }

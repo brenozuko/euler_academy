@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -11,6 +12,10 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   bool value = false;
+  var txtNome = TextEditingController();
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +49,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
           TextFormField(
             // autofocus: true,
+            controller: txtNome,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
               labelText: "Nome completo",
@@ -68,6 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
           // INPUT EMAIL
           TextFormField(
             // autofocus: true,
+            controller: txtEmail,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               labelText: "E-mail",
@@ -112,6 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
           // INPUT PASSWORD
           TextFormField(
             // autofocus: true,
+            controller: txtSenha,
             keyboardType: TextInputType.text,
             obscureText: true,
             decoration: InputDecoration(
@@ -150,8 +158,11 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             onPressed: () {
-              Navigator.of(context).pushNamedAndRemoveUntil(
-                  'categories', (Route<dynamic> route) => false);
+              criarConta(
+                txtNome.text,
+                txtEmail.text,
+                txtSenha.text,
+              );
             },
             child: Padding(
               padding: EdgeInsets.all(10.0),
@@ -305,4 +316,30 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         )
       ]);
+
+  void criarConta(nome, email, senha) {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: senha)
+        .then((value) {
+      exibirMensagem('Usuário criado com sucesso!');
+      Navigator.pop(context);
+    }).catchError((erro) {
+      if (erro.code == 'email-already-in-use') {
+        exibirMensagem('ERRO: O email informado está em uso.');
+      } else if (erro.code == 'invalid-email') {
+        exibirMensagem('ERRO: Email inválido.');
+      } else {
+        exibirMensagem('ERRO: ${erro.message}');
+      }
+    });
+  }
+
+  void exibirMensagem(msg) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(msg),
+        duration: Duration(seconds: 2),
+      ),
+    );
+  }
 }
