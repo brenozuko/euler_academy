@@ -13,6 +13,7 @@ import 'pages/fisica.dart';
 import 'pages/quimica.dart';
 import 'pages/filosofia.dart';
 import 'pages/exercises_page.dart';
+import 'pages/my_exercises.dart';
 
 void main() {
   runApp(
@@ -32,7 +33,8 @@ void main() {
         'fisica': (context) => const Fisica(),
         'quimica': (context) => const Quimica(),
         'filosofia': (context) => const Filosofia(),
-        'exercises': (context) => const ExercisesPage()
+        'exercises': (context) => const ExercisesPage(),
+        'my_exercises' : (context) => const MyExercises()
       },
       theme: ThemeData(
         fontFamily: 'Lato',
