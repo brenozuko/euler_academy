@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class _RegisterPageState extends State<RegisterPage> {
   var txtNome = TextEditingController();
   var txtEmail = TextEditingController();
   var txtSenha = TextEditingController();
+  var txtInstituicao = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +97,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
 
           TextFormField(
+            controller: txtInstituicao,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
               labelText: "Instituição de ensino",
@@ -322,7 +325,15 @@ class _RegisterPageState extends State<RegisterPage> {
         .createUserWithEmailAndPassword(email: email, password: senha)
         .then((value) {
       exibirMensagem('Usuário criado com sucesso!');
-      Navigator.pop(context);
+
+      FirebaseFirestore.instance.collection('usuarios').add({
+        'nome': txtNome.text,
+        'email': txtEmail.text,
+        'instituicao': txtInstituicao.text,
+      });
+
+      Navigator.of(context)
+          .pushNamedAndRemoveUntil('login', (Route<dynamic> route) => false);
     }).catchError((erro) {
       if (erro.code == 'email-already-in-use') {
         exibirMensagem('ERRO: O email informado está em uso.');
