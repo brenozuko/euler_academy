@@ -27,7 +27,7 @@ class _ExercisesPageState extends State<ExercisesPage> {
       child: ListTile(
         //leading: Icon(Icons.arrow_right),
         title: Text(
-          item.data()['titulo'],
+          item.data()['nome'],
           style: TextStyle(
             fontSize: 20,
             color: Color(0xff274378),
