@@ -45,76 +45,79 @@ class _MyExercisesState extends State<MyExercises> {
       body: Column(
         children: [
           Expanded(
+              flex: 2,
               child: Column(
-            children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
-                child: TextFormField(
-                  // autofocus: true,
-                  controller: txtExercicio,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    labelText: "Nome do Exercício",
-                    labelStyle: TextStyle(
-                      color: Colors.black38,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff274378)),
-                    ),
-                  ),
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 20, 6),
-                child: TextFormField(
-                  // autofocus: true,
-                  controller: txtMateria,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    labelText: "Nome da Materia",
-                    labelStyle: TextStyle(
-                      color: Colors.black38,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff274378)),
-                    ),
-                  ),
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              Container(
-                height: 40,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                  onPressed: () {
-                    if (txtExercicio.text != "" && txtMateria.text != "") {
-                      FirebaseFirestore.instance.collection('exercicios').add({
-                        'nome': txtExercicio.text,
-                        'materia': txtMateria.text,
-                      });
-
-                      txtMateria.text = '';
-                      txtExercicio.text = '';
-                    }
-                  },
-                  child: const Text('Adicionar Exercício',
-                      style: TextStyle(
-                          color: Color(0xffffffff),
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
+                    child: TextFormField(
+                      // autofocus: true,
+                      controller: txtExercicio,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: "Nome do Exercício",
+                        labelStyle: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w400,
                           fontSize: 20,
-                          decoration: TextDecoration.none)),
-                ),
-              )
-            ],
-          )),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff274378)),
+                        ),
+                      ),
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(20, 0, 20, 6),
+                    child: TextFormField(
+                      // autofocus: true,
+                      controller: txtMateria,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: "Nome da Materia",
+                        labelStyle: TextStyle(
+                          color: Colors.black38,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0xff274378)),
+                        ),
+                      ),
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                  Container(
+                    height: 40,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      onPressed: () {
+                        if (txtExercicio.text != "" && txtMateria.text != "") {
+                          FirebaseFirestore.instance
+                              .collection('exercicios')
+                              .add({
+                            'nome': txtExercicio.text,
+                            'materia': txtMateria.text,
+                          });
+
+                          txtMateria.text = '';
+                          txtExercicio.text = '';
+                        }
+                      },
+                      child: const Text('Adicionar Exercício',
+                          style: TextStyle(
+                              color: Color(0xffffffff),
+                              fontSize: 20,
+                              decoration: TextDecoration.none)),
+                    ),
+                  )
+                ],
+              )),
           Expanded(
-            flex: 4,
+            flex: 5,
             child: Container(
               padding: EdgeInsets.all(20),
 
