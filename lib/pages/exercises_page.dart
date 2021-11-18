@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'components/drawer_content.dart';
 
@@ -11,18 +12,59 @@ class ExercisesPage extends StatefulWidget {
 }
 
 class _ExercisesPageState extends State<ExercisesPage> {
-  var lista = [];
+  var lista;
 
   @override
   void initState() {
-    lista.add("Funções Logarítmicas");
-    lista.add("Polinômios");
-    lista.add("Funções de Primeiro Grau");
-    lista.add("Funções de Segundo Grau");
-    lista.add("Frações");
-    lista.add("Logaritmos");
-    lista.add("Análise Combinatória");
     super.initState();
+
+    lista = FirebaseFirestore.instance.collection('exercicios');
+  }
+
+  exibirExercicos(item) {
+    return Container(
+      margin: EdgeInsets.only(top: 20),
+      child: ListTile(
+        //leading: Icon(Icons.arrow_right),
+        title: Text(
+          item.data()['titulo'],
+          style: TextStyle(
+            fontSize: 20,
+            color: Color(0xff274378),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        subtitle: Text(item.data()['materia']),
+
+        trailing: ElevatedButton(
+          onPressed: () {},
+          child: const Text(
+            'Iniciar',
+            style: TextStyle(
+              fontFamily: 'Lato',
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0,
+            blurRadius: 5,
+            offset: Offset(0, 0), // changes position of shadow
+          )
+        ],
+      ),
+    );
   }
 
   Widget build(BuildContext context) {
@@ -43,62 +85,43 @@ class _ExercisesPageState extends State<ExercisesPage> {
       body: Column(
         children: [
           Expanded(
-            flex: 4,
+            flex: 5,
             child: Container(
               padding: EdgeInsets.all(20),
 
               //
               // ListView
               //
-              child: ListView.builder(
-                //quantidade de elementos da lista
-                itemCount: lista.length,
+              child: StreamBuilder<QuerySnapshot>(
+                stream: lista.snapshots(),
+                builder: (context, snapshot) {
+                  switch (snapshot.connectionState) {
+                    case ConnectionState.none:
+                      return const Center(
+                        child: Text('Não foi possível conectar ao Firestore'),
+                      );
 
-                //alterar a orientação (vertical/horizontal)
-                //scrollDirection: Axis.horizontal,
+                    case ConnectionState.waiting:
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
 
-                //definir a aparência dos elementos
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.only(top: 20),
-                    child: ListTile(
-                      //leading: Icon(Icons.arrow_right),
-                      title: Text(
-                        lista[index],
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xff274378),
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Iniciar',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0,
-                          blurRadius: 5,
-                          offset: Offset(0, 0), // changes position of shadow
-                        )
-                      ],
-                    ),
-                  );
+                    //se os dados foram recebidos com sucesso
+                    default:
+                      final dados = snapshot.requireData;
+                      return ListView.builder(
+                        //quantidade de elementos da lista
+                        itemCount: dados.size,
+
+                        //alterar a orientação (vertical/horizontal)
+                        //scrollDirection: Axis.horizontal,
+
+                        //definir a aparência dos elementos
+                        itemBuilder: (context, index) {
+                          return exibirExercicos(dados.docs[index]);
+                        },
+                      );
+                  }
                 },
               ),
             ),
